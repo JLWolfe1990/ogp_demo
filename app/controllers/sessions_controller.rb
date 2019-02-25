@@ -1,5 +1,4 @@
-class UsersController < ApplicationController
-  # todo: rename sessionscontroller
+class SessionsController < ApplicationController
   skip_before_action :redirect_authenticated
 
   def new
@@ -7,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(full_name: params[:user][:full_name])
+    @user = User.create(user_attrs)
 
     if @user
       session[:user_id] = @user.id
@@ -21,9 +20,14 @@ class UsersController < ApplicationController
 
   def destroy
     flash[:danger] = "Sorry to see you go #{current_user.first_name}!"
-    current_user.destroy!
     session[:user_id] = nil
 
-    redirect_to new_user_path
+    redirect_to login_path
+  end
+
+  private
+
+  def user_attrs
+    params.require(:user).permit(:full_name)
   end
 end

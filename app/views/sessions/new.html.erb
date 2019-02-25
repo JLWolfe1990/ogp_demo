@@ -8,8 +8,8 @@
         </div>
 
         <div class="card-body">
-          <%= simple_form_for @user, html: { class: 'form js-login-form' } do |f| %>
-            <%= f.input :full_name, placeholder: 'Please enter your full name', label: false %>
+          <%= simple_form_for @user, url: '/sessions', html: { class: 'form js-login-form' } do |f| %>
+            <%= f.input :full_name, placeholder: 'Please enter your full name', label: false, required: true %>
 
             <%= f.submit "Let's Go!", class: 'btn btn-primary' %>
           <% end %>

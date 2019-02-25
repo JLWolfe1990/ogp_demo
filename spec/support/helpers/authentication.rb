@@ -2,7 +2,7 @@ module Helpers
   module Authentication
     # in a larger project, this would be refactored to address the session directly for speed
     def login_user
-      visit new_user_path
+      visit login_path
 
       fill_in('user_full_name', with: 'Bob Marley')
 
@@ -15,7 +15,7 @@ module Helpers
     end
 
     def logout_user
-      visit user_path(method: :delete)
+      visit session_path(method: :delete)
     end
   end
 end

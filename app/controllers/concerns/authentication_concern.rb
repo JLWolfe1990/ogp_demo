@@ -13,7 +13,7 @@ module AuthenticationConcern
     end
 
     def redirect_authenticated
-      return redirect_to new_user_path unless current_user
+      return redirect_to login_path unless current_user
       true
     end
   end
