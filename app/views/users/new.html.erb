@@ -1,0 +1,21 @@
+<div class="container login">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-sm col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Welcome to the OGP demo site... Wait, what is your name again?
+        </div>
+
+        <div class="card-body">
+          <%= simple_form_for @user, html: { class: 'form js-login-form' } do |f| %>
+            <%= f.input :full_name, placeholder: 'Please enter your full name', label: false %>
+
+            <%= f.submit "Let's Go!", class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OgpDemo</title>
+    <title>OGP Demo</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--    todo: what are these?-->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +15,10 @@
   </head>
 
   <body>
+    <%= render partial: 'layouts/nav' if current_user %>
+    <%= render partial: 'layouts/flash' %>
+
+<!--  I decided not to wrap all of this in a container so that each page could handle locally  -->
     <%= yield %>
   </body>
 </html>
