@@ -23,12 +23,16 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bootstrap'
-
 gem 'jquery-rails'
-
 gem 'simple_form'
-
 gem 'font-awesome-rails'
+
+gem 'validate_url'
+gem 'httparty'
+gem 'nokogiri'
+gem 'pusher'
+
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
