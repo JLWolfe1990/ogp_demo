@@ -9,7 +9,11 @@ There were some challenges with that approach. More on those in the 'Learning Ex
 section bellow.
 
 ## Planning Stage
-### Basic Mockups on my iPad
+### Basic Mockups on my Balsamiq 
+* [Login Screen](https://i.imgur.com/AgiLH6U.png)
+* [After Login Screen](https://i.imgur.com/quPfTUp.png)
+* [Desktop](https://i.imgur.com/6w5Fq23.png)
+* [Mobile](https://i.imgur.com/9MVowYU.png)
 
 ### Implementation Considerations
 My first urge was to use React.js. I've been dying to give it a try, but I determined
@@ -38,10 +42,13 @@ Here are some of the items that I considered in order of priority (Agile style):
 * decent eventing infrastructure
 * basic login and logout notifications
 * naming support
+* moderate spec coverage
+  * VCR would have been useful for mocking the `HTTParty` call
 
 (Rejected)
 * mobile first development
 * extended fault tolerance
+* action cable
 * fully covered integration specs
 * react
 * fading of the image
@@ -109,3 +116,5 @@ down into a more granular approach like a would in a longer term project.
 
 
 ## GIFs
+### Basic Login, Run, Logout
+[View it here.](https://i.imgur.com/oC8Tr3j.gifv)
