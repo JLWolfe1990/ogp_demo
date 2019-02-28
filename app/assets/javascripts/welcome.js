@@ -12,9 +12,8 @@ $(document).ready(function() {
     // I would have enjoyed to add a spinner here, but I'm going to take that as out of scope
     $('.js-card-title-dropzone').html(ogp.getTitle());
     $('.js-ogp-card-dropzone img').attr({ 'src': ogp.getImageUrl() });
-    // todo: listen to the height attribute change and then show the image
 
-    // todo: having a problem with the show() function
+    // I had trouble with the basic show() hide() functionality for some reason so I did this
     $('.js-ogp-card-dropzone').css('visibility', 'visible');
   };
 
@@ -47,6 +46,5 @@ $(document).ready(function() {
   this.eventManager = new EventManager();
   this.eventManager.bindEvent('ogp-event', this.processEvent);
 
-  // todo: only works a couple of times ??
   $('.js-ogp-form').on('submit', this.onSubmitForm);
 });

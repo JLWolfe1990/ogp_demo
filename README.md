@@ -58,7 +58,7 @@ Here are some of the items that I considered in order of priority (Agile style):
 
 ## Implementation Notes
 ### Known Issues
-* can only run the test back to back for a limited number of times
+* limitations around multiple urls without refresh
 * the image should be showing at the top and more pretty
   * image dimensions are not supported
 * is not optimized for mobile
