@@ -1,9 +1,11 @@
 class OgpsController < ApplicationController
   def create
-    if Ogp.create!(user_id: current_user.id, path: params[:ogp][:path])
-      render json: {}
+    opg = Ogp.create!(user_id: current_user.id, path: params[:ogp][:path])
+
+    if opg.persisted?
+      render json: opg.as_json
     else
-      render json: {}, status: :bad_request
+      render json: nil, status: :bad_request
     end
   end
 
@@ -13,7 +15,7 @@ class OgpsController < ApplicationController
     if @ogp
       render json: @ogp.as_json
     else
-      render json: {}, status: :bad_request
+      render json: nil, status: :bad_request
     end
   end
 end

@@ -5,6 +5,10 @@ $(document).ready(function() {
   }.bind(this);
 
   this.dropInImage = function (ogp) {
+    if(!ogp.getImageUrl()) {
+      return null;
+    }
+
     // I would have enjoyed to add a spinner here, but I'm going to take that as out of scope
     $('.js-card-title-dropzone').html(ogp.getTitle());
     $('.js-ogp-card-dropzone img').attr({ 'src': ogp.getImageUrl() });
@@ -24,11 +28,11 @@ $(document).ready(function() {
   };
 
   this.processCreateJson = function(ogp_json) {
-      // variable in ruby syntax because of the structure of the passed keys
-      var ogp = new Ogp(ogp_json);
-      this.dropInImage(ogp);
+    // variable in ruby syntax because of the structure of the passed keys
+    var ogp = new Ogp(ogp_json);
+    this.dropInImage(ogp);
 
-      $('.js-ogp-form input[type=submit]').attr({ disabled: false });
+    $('.js-ogp-form input[type=submit]').attr({ disabled: false });
   };
 
   this.processEvent = function(data) {
