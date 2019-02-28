@@ -1,0 +1,29 @@
+<script type="javascript">
+  // put this here to avoid the 'flashing' issue where the element will show
+  // to the user and then disappear
+  $('.js-ogp-card-dropzone').hide();
+</script>
+
+<div class="container welcome">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <%= simple_form_for @ogp, html: { class: 'form-inline js-ogp-form' } do |f| %>
+        <%= f.input :path, as: :url, label: false, placeholder: 'https://www.slack.com' %>
+        <%= f.submit 'Test it!', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row js-ogp-card-dropzone hidden">
+    <div class="col-md-6 offset-md-3">
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title js-card-title-dropzone"></h2>
+          <img src="" class="card-image-top">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

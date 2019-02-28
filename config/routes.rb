@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'home#welcome'
 
   resources :sessions, only: [:create, :destroy]
+  resources :ogps, only: [:create, :show]
 
   get 'login', to: 'sessions#new', as: 'login'
   get 'welcome', to: 'home#welcome'

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
 
       flash[:success] = "Welcome to the OGP demo #{@user.first_name}"
-      redirect_to welcome_path
+      redirect_to root_path # root path because I don't want the url to be '/welcome'
     else
       render(:new)
     end

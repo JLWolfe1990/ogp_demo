@@ -1,0 +1,14 @@
+.welcome {
+  // I like to scope to each page to avoid css bugs
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .row {
+    form {
+      // this should really be on the row, but I'm short on time
+      margin-bottom: 25px;
+    }
+  }
+}

@@ -16,4 +16,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require pusher
+//= require welcome
+//= require models/event_pipeline_object
 //= require_tree .
