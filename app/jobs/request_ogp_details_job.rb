@@ -12,6 +12,6 @@ class RequestOgpDetailsJob < ApplicationJob
 
     # this could be it's own job and service combo, but I think that it could also
     # be appropriate here for this use case
-    OgpEventNotificationService.notify_complete(ogp).perform
+    OgpEventNotificationService.notify_complete(ogp)
   end
 end

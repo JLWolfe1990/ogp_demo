@@ -20,6 +20,8 @@ module Helpers
   end
 end
 
+# I like to put these here because it is easily noticed and can save some time from
+# people being frustrated because their helpers are not showing up
 RSpec.configure do |configure|
   configure.include Helpers::Authentication, type: :feature
 end

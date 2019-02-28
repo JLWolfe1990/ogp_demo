@@ -4,15 +4,28 @@ class RequestOgpDetailsService
   end
 
   def perform
-    response = HTTParty.get(@ogp.path)
+    begin
+      @ogp.update(image_url: image_url, title: title)
+    rescue NoMethodError
+      Rails.logger.error('Failed to decode ogp')
+    end
 
-    html = Nokogiri::HTML(response)
+  end
 
-    title =  html.xpath('/html/head/title').text
-    image_url =  html.xpath('/html/head/meta[@property="og:image"]').xpath('//*[@property="og:image"]').first.attributes['content'].value
+  def response
+    HTTParty.get(@ogp.path)
+  end
 
-    return nil unless image_url && title # both required
+  def html
+    Nokogiri::HTML(response)
+  end
 
-    @ogp.update(image_url: image_url, title: title)
+  def title
+    html.xpath('/html/head/title').text
+  end
+
+  def image_url
+    # pretty hacked together, but I got stuck and had to find some sort of solution
+    html.xpath('/html/head/meta[@property="og:image"]').xpath('//*[@property="og:image"]').first.attributes['content'].value
   end
 end
